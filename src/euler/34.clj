@@ -1,9 +1,5 @@
-(ns euler.34)
-
-(defn factorial [n] (if (<= n 1) 1 (* n (factorial (dec n)))))
-
-(defn digits [number]
-  (map #(Character/digit % 10) (str number)))
+(ns euler.34
+  (:use [euler.utils :only [factorial digits]]))
 
 (defn curious? [n]
   (= n (reduce + (map factorial (digits n)))))
